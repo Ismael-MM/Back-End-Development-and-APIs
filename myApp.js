@@ -19,6 +19,21 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
 })
 
+app.get(
+    "/now",
+    (req, res, next) => {
+      // adding a new property to req object
+      // in the middleware function
+      req.string = new Date().toString();
+      next();
+    },
+    (req, res) => {
+      // accessing the newly added property
+      // in the main function
+      res.send(req.string);
+    }
+  );
+
 app.get('/json', (req, res) => {
 
     let msg;
