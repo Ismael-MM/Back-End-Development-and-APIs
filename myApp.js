@@ -24,13 +24,13 @@ app.get(
     (req, res, next) => {
       // adding a new property to req object
       // in the middleware function
-      req.string = new Date().toString();
+      req.time = new Date().toString();
       next();
     },
     (req, res) => {
       // accessing the newly added property
       // in the main function
-      res.send(req.string);
+      res.send(req.time);
     }
   );
 
