@@ -1,7 +1,6 @@
 require('dotenv').config();
-const bodyParser = require("body-parser");
+let bodyParser = require("body-parser");
 
-const bodyParser = require('body-parser');
 let express = require('express');
 let app = express();
 console.log("Hello World");
