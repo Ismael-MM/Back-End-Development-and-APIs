@@ -8,11 +8,11 @@ console.log("Hello World");
 
 app.use("/public",express.static(__dirname + "/public"));
 
+app.use(bodyParser.urlencoded({extended: false}));
+
 app.use(function middleware(req, res, next) {
 
     var string = req.method + " " + req.path + " - " + req.ip;
-
-    bodyParser.urlencoded({ extended: false })
     // Do something
     console.log(string);
     // Call the next function in line:
