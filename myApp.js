@@ -38,8 +38,12 @@ const createAndSavePerson = (done) => {
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
-  Model.create(arrayOfPeople)
-  done(null /*, data*/);
+  Model.create(arrayOfPeople, function (err, people) {
+    if (err) {
+      return done(err);
+    }
+    done(null , people);
+  });
 };
 
 const findPeopleByName = (personName, done) => {
