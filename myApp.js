@@ -46,11 +46,9 @@ let arrayOfPeople = [
 
 const createManyPeople = (arrayOfPeople, done) => {
 
-  Model.create(arrayOfPeople, function (err, people) {
-    if (err) {
-      return done(err);
-    }
-    done(null , people);
+  Person.create(arrayOfPeople, function (err, people) {
+    if (err) return console.log(err);
+    done(null, people);
   });
 };
 
