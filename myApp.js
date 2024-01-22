@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('mongoose');
+import mongoose from 'mongoose';
 
 
 let Person;
