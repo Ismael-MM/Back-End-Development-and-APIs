@@ -8,7 +8,7 @@ let Person;
 
 
 // esquemas
-const personSchema = new Schema({
+const personSchema = new mongoose.Schema({
   name:{
     type: String,
     required: true,} , // String is shorthand for {type: String}
@@ -18,7 +18,7 @@ const personSchema = new Schema({
 
 
 //modelos
-Person = mongoose.model('personSchema', Schema);
+Person = mongoose.model('Person', personSchema);
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
