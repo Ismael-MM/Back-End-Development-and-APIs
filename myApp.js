@@ -38,6 +38,7 @@ const createAndSavePerson = (done) => {
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
+  Model.create(arrayOfPeople)
   done(null /*, data*/);
 };
 
